@@ -9,9 +9,9 @@ from SE3 import SE3
 # test the functions with sample inputs
 test1_inputs = {"movement": 1, "noise": 1}
 test1 = SE1(**test1_inputs)  # Pakker inputfelterne ud som navngivne argumenter.
-test2_inputs = {"fald": 0, "stod": 1}
+test2_inputs = {"fald": 1, "stod": 0}
 test2 = SE2(**test2_inputs)
-test3_inputs = {"sleep": 1, "wake": 0}
+test3_inputs = {"sleep": 0, "wake": 1}
 test3 = SE3(**test3_inputs)
 
 timestamp = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
