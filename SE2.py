@@ -1,11 +1,11 @@
 def SE2(stod, fald):
     """Print a sensor message and return whether a fall was detected."""
     if fald == 1:
-        print("stod")
+       #print("stod")
         return True
 
     elif stod == 1:
-        print("fald")
+        #print("fald")
         return False
 
     elif stod == 0 and fald == 0:

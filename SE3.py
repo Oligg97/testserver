@@ -1,9 +1,10 @@
 def SE3(sleep, wake):
     if sleep == 1:
-        print("ZZz")
+       #print("ZZz")
         return True
     elif wake == 1:
-        print("wake")
+        #print("wake")
+        return False
 
 # Simulate a sensor reading: movement and noise are both detected.
 sleep = 1

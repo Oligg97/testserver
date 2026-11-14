@@ -1,0 +1,29 @@
+[
+  {
+    "id": "test1",
+    "sensor": "SE1",
+    "inputs": {
+      "movement": 1,
+      "noise": 1
+    },
+    "result": true
+  },
+  {
+    "id": "test2",
+    "sensor": "SE2",
+    "inputs": {
+      "fald": 1,
+      "stod": 0
+    },
+    "result": true
+  },
+  {
+    "id": "test3",
+    "sensor": "SE3",
+    "inputs": {
+      "sleep": 0,
+      "wake": 1
+    },
+    "result": false
+  }
+]

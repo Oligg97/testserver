@@ -1,0 +1,8 @@
+import json
+from pathlib import Path
+
+results_file = Path(__file__).with_name("results.json")
+results = json.loads(results_file.read_text(encoding="utf-8"))
+
+for result in results:
+    print(f"{result['id']} ({result['sensor']}): {result['result']}")
