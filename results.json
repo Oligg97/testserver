@@ -6,24 +6,27 @@
       "movement": 1,
       "noise": 1
     },
-    "result": true
+    "result": true,
+    "timestamp": "14-11-2026 14:36:23"
   },
   {
     "id": "test2",
     "sensor": "SE2",
     "inputs": {
-      "fald": 1,
-      "stod": 0
+      "fald": 0,
+      "stod": 1
     },
-    "result": true
+    "result": false,
+    "timestamp": "14-11-2026 14:36:23"
   },
   {
     "id": "test3",
     "sensor": "SE3",
     "inputs": {
-      "sleep": 0,
-      "wake": 1
+      "sleep": 1,
+      "wake": 0
     },
-    "result": false
+    "result": true,
+    "timestamp": "14-11-2026 14:36:23"
   }
 ]
