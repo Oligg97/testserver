@@ -1,16 +1,15 @@
-"""Indsæt sensorresultaterne fra results.json i SQLite-databasen."""
-
 import json
 import sqlite3
 from pathlib import Path
 
-results_file = Path(__file__).with_name("results.json")
-results = json.loads(results_file.read_text(encoding="utf-8"))
-database_file = Path(__file__).with_name("sensordata.db")
+"""Variabler"""
+results_file = Path(__file__).with_name("results.json") # path til JSON-filen med resultaterne
+results = json.loads(results_file.read_text(encoding="utf-8")) # Læs JSON-filen og konverter den til en Python-liste af ordbøger
+database_file = Path(__file__).with_name("sensordata.db") # path til SQLite-databasen
 
 
 def insert_item(connection, item):
-    """Indsæt én sensorpost med JSON-input og tidsstempel."""
+    """Indsætter en enkelt post i sensor_data-tabellen i SQLite-databasen."""
     connection.execute(
         """
         INSERT INTO sensor_data (nameid, sensor, input, result, timestamp)

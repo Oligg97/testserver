@@ -1,4 +1,5 @@
 def SE3(sleep, wake):
+    """Returnerer True hvis søvn er registreret, ellers False. Hvis både søvn og vågen er 0, returneres False."""
     if sleep == 1:
        #print("ZZz")
         return True

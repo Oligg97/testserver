@@ -1,5 +1,5 @@
 def SE1(movement, noise):
-    """Return True and print a message when movement and noise are detected."""
+    """Returnerer True hvis både bevægelse og støj er registreret, ellers False."""
     if movement == 1 and noise == 1:
        #print("alarm activated")
         return True
