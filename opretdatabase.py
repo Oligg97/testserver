@@ -9,11 +9,11 @@ print("Connection to database established!")
 cursor = conn.cursor() #for at kunne udføre SQL kommandoer
 
 #opret en tabel
-cursor.execute("""CREATE TABLE sensor_data (
+cursor.execute("""CREATE TABLE IF NOT EXISTS sensor_data (
             uid INTEGER PRIMARY KEY AUTOINCREMENT,
             nameid TEXT,
             sensor TEXT,
-            input INTEGER,
+            input TEXT,
             result BOOLEAN
 )""")
 #dog string bruges fordi manden i youtube-videoen siger det. Alternativt skulle det skrives på en linje.

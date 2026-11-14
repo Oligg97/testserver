@@ -1,8 +1,39 @@
 import json
 from pathlib import Path
+import sqlite3
 
 results_file = Path(__file__).with_name("results.json")
 results = json.loads(results_file.read_text(encoding="utf-8"))
+database_file = Path(__file__).with_name("sensordata.db")
 
-for result in results:
-    print(f"{result['id']} ({result['sensor']}): {result['result']}")
+
+def insert_item(connection, item):
+    connection.execute(
+        """
+        INSERT INTO sensor_data (nameid, sensor, input, result)
+        VALUES (?, ?, ?, ?)
+        """,
+        (
+            item["id"],
+            item["sensor"],
+            json.dumps(item["inputs"]),
+            item["result"],
+        ),
+    )
+
+
+with sqlite3.connect(database_file) as connection:
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS sensor_data (
+            uid INTEGER PRIMARY KEY AUTOINCREMENT,
+            nameid TEXT,
+            sensor TEXT,
+            input TEXT,
+            result BOOLEAN
+        )
+    """)
+    for result in results:
+        print(f"{result['id']} ({result['sensor']}): {result['result']}")
+        insert_item(connection, result)
+
+print(f"{len(results)} JSON-poster indsat i {database_file.name}")
